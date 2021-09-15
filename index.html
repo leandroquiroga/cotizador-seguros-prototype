@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Leandro Quiroga">
+        <meta name="description" content="Simulador de cotizador de seguros medicos">
+        <meta name="keywords" content="seguros, cotizador, medicos, seguros medicos, economico">
+        <title>Cotización de Seguros</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="shortcut icon" href="/public/svg/grafico-de-cotizaciones.svg" type="image/x-icon">
+    </head>
+    <body>
+        <section class="container">
+            <article class="seccion-input">
+                <h3 class="text-title">Complete el formulario: </h3>
+                <form action="" class="form-required" id="form-cotizar">
+                    <label for="name"> Nombre Completo: </label>
+                    <input type="text" name="name" class="form-control" id="name-complete"  placeholder="Ingrese su nombre completo... ">
+                    <label for="last-name-complete"> Apellido: </label>
+                    <input type="text" name="last-name" class="form-control" id="last-name-complete"  placeholder="Ingrese su apellido... ">
+                    <label for="tel">Telefono: </label>
+                    <input type="tel" name="tel" class="form-control" id="tel"  placeholder="Ingrese su telefono... ">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="form-control" id="email"  placeholder="Ingrese su email... ">
+                    <label for="country">Pais: </label>
+                    <select name="contry" class="form-control" id="country" required='true'></select>
+                    <label for="seguro">Seguro</label>
+                    <select name="seguro" class="form-control" id="seguro" required='true'></select>
+                    <!-- Dinamic Windows-->
+                    <article class="parentDiv">
+                        <div class="spinner hidden">
+                            <img src="/public/svg/tail-spin.svg" alt="spinner">
+                        </div>    
+                        <div class="result"></div>
+                        <div class="checkValue"></div>
+                    </article>
+                    <div class="buttons">
+                        <button type="submit" id="sendForm"  class="btn-form"  value="Cotizar Seguro">
+                            Cotizar seguro
+                        </button>
+                        <button type="reset" id="cleanForm" class="btn-form"  value="Resetar">
+                            Resetear Formulario
+                        </button>
+                    </div>
+                </form>
+            </article>
+        </section>
+        <!-- Libreria Numeral.js-->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+        <script src="/js/index.js" type="module"></script>
+    </body>
+</html>
