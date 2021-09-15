@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --dark: #202020;
+    --white: #f3f3f3;
+    --gray: #7e7e7e;
+    --pupure: #501870;
+    --pupure-light: #982bd6d5;
+    --red: #e00909;
+    --green: #10e03a;
+    --font: 'Ubuntu', sans-serif;
+}
+body {
+    background-color: var(--white);
+}
+.container {
+    background-color: var(--white);
+    border-radius: 5px;
+    box-shadow: 1px 0 10px 2px var(--pupure);
+    max-width: 475px;
+    min-height: 350px;
+    width: 90%;
+    padding: 10px;
+    margin: 5vh auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .seccion-input{
+    width: 100%;
+}
+.container .seccion-input .text-title{
+    border-bottom: 1px solid var(--gray);
+    margin: 15px 0;
+    font: 400 1.2rem var(--font)
+}
+.container .seccion-input .form-required{
+    display: grid;
+    grid-template-columns: repeat(autofit, minmax(325px,auto));
+    place-content: center;
+}
+.container .seccion-input .form-required .form-control{
+    width: 350px;
+    height: 40px;
+    border:none;
+    outline:none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px auto
+}
+.container .seccion-input .form-required label,
+.container .seccion-input .form-required .form-control::placeholder{
+   font: 400 .8rem var(--font)
+}
+.container .seccion-input .form-required .buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px;
+}
+.container .seccion-input .form-required .buttons .btn-form{
+    width: 145px;
+    height: 40px;
+    padding: 10px ;
+    margin: 0 5px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--pupure);
+    color: var(--white);
+    font: 400 .8rem var(--font);
+    cursor: pointer;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    align-items: center;
+}
+.container .seccion-input .form-required .buttons .btn-form:hover{
+    background-color: var(--pupure-light)
+}
+.container .seccion-input .form-required .buttons .btn-form  .icon-btn{
+    width: 18px;                            
+}
+.animation-send{
+    animation: desplazar 2s ease-in-out;
+}
+.animation-reset{
+    animation: reset 2s ease-in .3s;
+}
+@keyframes desplazar{
+    from{margin-bottom: 0;}
+    to{margin-bottom: 100%}
+}
+
+@keyframes reset{
+    0%{transform: rotate(360deg)}
+    100%{transform: rotate(0)}
+}
+.resValidator, .result, .dialog-resumen, .spinner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px 0;
+}
+.text-validator{
+    width: 90%;
+    height: 30px;
+    display:inherit;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    color: var(--white);
+    border-radius: 5px;
+    font: 400 1rem var(--font);
+}
+.error{
+    background-color: var(--red);
+}
+.check{
+    background-color: var(--green)
+}
+.dialog-resumen{
+    width: 85%;
+    border: 1px solid var(--pupure);
+    box-shadow: 1px 1px 3px  var(--dark);
+    background-color: #FFF;
+    border-radius: 5px;
+}
+.title-resumen{
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    background-color: var(--pupure);
+    color: var(--white);
+    font: 400 1rem var(--font);
+}
+.content-resumen{
+    line-height: 22px;
+    padding: 10px;
+}
+.info-resumen{
+    font: 400 .9rem var(--font);
+}
+.hidden{
+    opacity: 0;
+    overflow: hidden;
+    display: none;
+}
+@media screen and (max-width: 500px){
+    .container .seccion-input .form-required .form-control{
+        width: 100%;
+    }
+}
